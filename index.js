@@ -10,9 +10,20 @@ for (let x = 0; x < drums.length; x++) {
 
     // declared a variable that stores the element between opening and closing tags
     let buttonInnerHTML = event.target.innerHTML;
+    sound(buttonInnerHTML);
+    animate(buttonInnerHTML);
+    
+  });
+}
 
-    // a conditional statement that checks for each clicked element 
-    switch (buttonInnerHTML) {
+document.addEventListener("keypress", (event) => {
+  sound(event.key);
+  animate(event.key);
+})
+
+// a function that selects the keyboard pressed in the code 
+function sound(key){
+  switch (key) {
       
       // each case adds a sound to a different drum element that is clicked 
       case "w":
@@ -46,5 +57,15 @@ for (let x = 0; x < drums.length; x++) {
       default:
         console.log(buttonInnerHTML);
     }
-  });
+}
+
+// function that add animate to the button from the css class 
+function animate(btnkey){
+ var mate = document.querySelector("." + btnkey);
+ mate.classList.add("pressed");
+
+ // A function that removes the animate function milsec after 
+ setTimeout(function() {
+  mate.classList.remove("pressed");
+ }, 100)
 }
