@@ -1,5 +1,6 @@
 // declaring a variable that selects the class drum
 //Bruce is awesome
+//for victor
 let drums = document.querySelectorAll(".drum");
 
 // a loop that iterates through all the drum classes and using the length to get the numbers
